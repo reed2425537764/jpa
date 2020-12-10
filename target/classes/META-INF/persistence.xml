@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="myJpa" transaction-type="RESOURCE_LOCAL"><!--RESOURCE_LOCAL本地事务管理  JTA分布式事务管理-->
+        <!--jpa实现方式-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <properties>
+            <!--数据库信息-->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="971214"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql:///db2?serverTimezone=UTC"/>
+            <!--JPA实现方的信息-->
+            <property name="hibernate.show_sql" value="true"/>    <!--显示sql-->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>    <!--自动创建数据库表-->
+            <!--create 每次运行后重新创建表-->
+            <!--update 如果存在表，不创建-->
+        </properties>
+    </persistence-unit>
+</persistence>
